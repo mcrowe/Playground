@@ -40,6 +40,6 @@ class CreativesController < ApplicationController
     @creative = Creative.find(params[:id])
     @creative.destroy
 
-    redirect_to creatives_url
+    redirect_to creatives_url, notice: 'Creative was successfully deleted.'
   end
 end
