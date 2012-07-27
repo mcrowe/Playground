@@ -1,0 +1,47 @@
+!!! Strict
+%html{:lang => "en"}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=IE7"}
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+    %title Playground
+    = csrf_meta_tags
+    /[if lt IE 9]
+      %script(src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
+
+    = stylesheet_link_tag "application", :media => "all"
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{href: "#"} Playground
+          .container.nav-collapse
+            %ul.nav
+              %li= link_to "Link1", "/path1"
+              %li= link_to "Link2", "/path2"
+              %li= link_to "Link3", "/path3"
+
+    .container
+
+      .content
+        .row
+          .span9
+            = yield
+          .span3
+            .well.sidebar-nav
+              %h3 Sidebar
+              %ul.nav.nav-list
+                %li.nav-header Sidebar
+                %li= link_to "Link1", "/path1"
+                %li= link_to "Link2", "/path2"
+                %li= link_to "Link3", "/path3"
+
+      %footer
+        %p © Company 2012
+
+    = javascript_include_tag "application"

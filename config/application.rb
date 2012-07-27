@@ -60,6 +60,7 @@ module Playground
 
     config.generators do |g|
       g.stylesheets false
+      g.javascripts false
       g.test_framework :rspec
       g.request_specs true
       g.view_specs false

@@ -1,0 +1,26 @@
+%h1 Listing creatives
+
+%table.table.table-striped.table-bordered
+
+  %thead
+    %tr
+      %th Name
+      %th Url
+      %th
+      %th
+      %th
+
+  %tbody
+    - @creatives.each do |creative|
+      %tr
+        %td= creative.name
+        %td= creative.url
+        %td= link_to 'Show', creative
+        %td= link_to 'Edit', edit_creative_path(creative)
+        %td= link_to 'Destroy', creative, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br/
+
+= link_to new_creative_path, :class => 'btn btn-primary' do
+  %i.icon-plus
+  New Creative
