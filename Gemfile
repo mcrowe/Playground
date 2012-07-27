@@ -9,6 +9,8 @@ gem 'twitter-bootstrap-rails', '~> 2.1.1'
 gem 'simple_form', '~> 2.0.2'
 gem 'mongoid', '~> 3.0.0'
 gem 'haml-rails', '~> 0.3.4'
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
