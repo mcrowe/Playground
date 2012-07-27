@@ -1,9 +1,11 @@
 require File.expand_path('../boot', __FILE__)
 
+# require "active_resource/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
-require "active_resource/railtie"
+# require "active_resource/railtie"
 require "sprockets/railtie"
+# require "rails/test_unit/railtie"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -55,5 +57,17 @@ module Playground
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.stylesheets false
+      g.test_framework :rspec
+      g.request_specs true
+      g.view_specs false
+      g.controller_specs false
+      g.helper_specs false
+      g.routing_specs false
+      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
+
   end
 end
