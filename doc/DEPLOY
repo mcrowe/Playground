@@ -1,0 +1,2 @@
+RAILS_ENV=production rake assets:precompile
+git push heroku master
