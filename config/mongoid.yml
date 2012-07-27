@@ -1,3 +1,11 @@
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOLAB_URI']  %>
+      options:
+        skip_version_check: true
+        safe: true
+
 development:
   # Configure available database sessions. (required)
   sessions:
@@ -58,6 +66,7 @@ development:
 
     # Ensure all times are UTC in the app side. (default: false)
     # use_utc: false
+
 test:
   sessions:
     default:

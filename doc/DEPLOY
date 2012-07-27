@@ -1,2 +1,4 @@
 RAILS_ENV=production rake assets:precompile
 git push heroku master
+
+Goto: http://mc-playground.herokuapp.com
